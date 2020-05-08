@@ -3,7 +3,7 @@ import {View, TextInput, Button, StyleSheet} from 'react-native';
 
 import BalanceLabel from '../../components/BalanceLabel';
 
-import {saveEntry} from '../../services/Entries';
+import {saveEntry, deleteEntry} from '../../services/Entries';
 
 const NewEntry = ({navigation}) => {
   const currentBalance = 2065.35;
@@ -23,6 +23,15 @@ const NewEntry = ({navigation}) => {
 
     console.log('NewEntry :: save ', data);
     saveEntry(data, entry);
+    goBack();
+  };
+
+  const remove = () => {
+    deleteEntry(entry);
+    goBack();
+  };
+  const goBack = () => {
+    navigation.goBack();
   };
 
   return (
@@ -42,7 +51,8 @@ const NewEntry = ({navigation}) => {
 
       <View>
         <Button title="Adicionar" onPress={save} />
-        <Button title="Cancelar" onPress={() => navigation.goBack()} />
+        <Button title="Excluir" onPress={remove} />
+        <Button title="Cancelar" onPress={goBack} />
       </View>
     </View>
   );
