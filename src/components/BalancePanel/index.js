@@ -12,7 +12,7 @@ const BalancePanel = ({currentBalance}) => {
   return (
     <View style={styles.container}>
       <LinearGradient
-        colors={[Colors.deepPurple, Colors.ligthBlue]}
+        colors={[Colors.purple, Colors.cyan]}
         style={styles.panel}>
         <BalancePanelLabel currentBalance={currentBalance} />
         <BalancePanelChart />
@@ -31,14 +31,14 @@ const styles = StyleSheet.create({
   },
   container: {},
   button: {
-    backgroundColor: Colors.lightGreen,
+    backgroundColor: Colors.deepPurple,
     borderRadius: 150,
     alignSelf: 'flex-end',
     alignItems: 'center',
     justifyContent: 'center',
     height: 50,
     width: 50,
-    marginTop: '-25',
+    marginTop: -25,
     marginRight: 10,
 
     shadowColor: '#000',
