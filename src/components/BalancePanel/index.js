@@ -11,9 +11,7 @@ import BalancePanelChart from './BalancePanelChart';
 const BalancePanel = ({currentBalance}) => {
   return (
     <View style={styles.container}>
-      <LinearGradient
-        colors={[Colors.purple, Colors.cyan]}
-        style={styles.panel}>
+      <LinearGradient colors={[Colors.purple, Colors.red]} style={styles.panel}>
         <BalancePanelLabel currentBalance={currentBalance} />
         <BalancePanelChart />
       </LinearGradient>
