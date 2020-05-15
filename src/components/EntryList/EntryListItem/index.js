@@ -1,5 +1,5 @@
 import React from 'react';
-import {View, Text, StyleSheet} from 'react-native';
+import {View} from 'react-native';
 
 import Svg, {Circle, Rect} from 'react-native-svg';
 
@@ -11,6 +11,7 @@ const EntryListItem = ({entry, isLastItem, isFirsItem}) => {
   const showBulletLine = !(isLastItem && isFirsItem);
   // const bulletColor = entry.category.color || Colors.white;
   const bulletColor = Colors.blue;
+
   return (
     <View>
       <Svg height="50" width="30">
@@ -36,8 +37,8 @@ const EntryListItem = ({entry, isLastItem, isFirsItem}) => {
   );
 };
 
-const styles = StyleSheet.create({
-  entry: {},
-});
+// const styles = StyleSheet.create({
+//   entry: {},
+// });
 
 export default EntryListItem;
