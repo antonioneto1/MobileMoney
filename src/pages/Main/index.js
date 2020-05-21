@@ -8,13 +8,22 @@ import EntryList from '../../components/EntryList';
 import Colors from '../../styles/Colors';
 
 const Main = ({navigation}) => {
-  const currentBalance = 2064.35;
+  // const currentBalance = 2064.35;
 
   return (
     <View style={styles.container}>
-      <BalancePanel currentBalance={currentBalance} />
-      <EntrySummary />
-      <EntryList navigation={navigation} />
+      <BalancePanel
+        onPressActionButton={() => navigation.navigate('NewEntry')}
+      />
+      <EntrySummary onPressActionButton={() => navigation.navigate('Report')} />
+      <EntryList
+        onEntryPress={entry =>
+          navigation.navigate('NewEntry', {
+            entry: entry,
+          })
+        }
+        onPressActionButton={() => navigation.navigate('Report')}
+      />
     </View>
   );
 };
